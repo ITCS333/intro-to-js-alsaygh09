@@ -33,11 +33,9 @@ function findLargest(numbers) {
  * The check should be case-insensitive.
  */
 function isPalindrome(str) {
- function isPalindrome(str) {
-  const lower = str.toLowerCase();
-  const reversed = lower.split("").reverse().join("");
-  return lower === reversed;
-}
+  const cleanedStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const reversedStr = cleanedStr.split('').reverse().join('');
+  return cleanedStr === reversedStr;
 }
 
 /**
@@ -45,7 +43,7 @@ function isPalindrome(str) {
  * @returns {number[]} A new array containing only the even numbers from the original array.
  */
 function filterEvenNumbers(numbers) {
-  
+
   return numbers.filter(num => num % 2 === 0);
 }
 
